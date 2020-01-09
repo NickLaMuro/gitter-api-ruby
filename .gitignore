@@ -1,0 +1,8 @@
+# gitter-api-ruby dev config
+.gitter.token
+
+# generated
+.rdoc
+
+# tmp files
+/tmp
