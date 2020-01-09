@@ -10,8 +10,6 @@ the responses, as well as a lower level request/json-response interface.
 Installation
 ------------
 
-(#Soon™)
-
 Add this line to your application's Gemfile:
 
 ```ruby
