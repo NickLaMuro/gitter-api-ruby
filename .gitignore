@@ -3,6 +3,7 @@
 
 # generated
 .rdoc
+/pkg
 
 # tmp files
 /tmp

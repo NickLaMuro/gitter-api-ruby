@@ -1,11 +1,23 @@
-require 'rake/clean'
+GEMSPEC_PATH = File.join '..', 'gitter-api.gemspec'
+GEMSPEC_FILE = File.expand_path GEMSPEC_PATH, __FILE__
+GEMSPEC      = eval File.read(GEMSPEC_FILE)
 
-lib = File.expand_path(File.join('..', 'lib'), __FILE__)
-$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
+require 'rake/clean'
 
 RI_GEN_PATH = File.join '.rdoc', 'gitter-api-ruby', 'ri'
 DOC_FILES   = %w[README.md]
+CLEAN.include   'pkg'
 CLOBBER.include '.rdoc'
+
+# -----------------------------------------------
+#                     Build
+# -----------------------------------------------
+
+require 'rubygems/package_task'
+
+namespace :rubygems do
+  Gem::PackageTask.new(GEMSPEC).define
+end
 
 # -----------------------------------------------
 #                     Docs
