@@ -7,6 +7,7 @@ require 'gitter/api/collectable'
 
 # models
 require 'gitter/api/base'
+require 'gitter/api/group'
 require 'gitter/api/user'
 require 'gitter/api/room'
 require 'gitter/api/message'
@@ -56,6 +57,7 @@ module Gitter
 
       include Net::HTTP::RestClientModule
 
+      include Group::ClientMethods
       include User::ClientMethods
       include Room::ClientMethods
 
